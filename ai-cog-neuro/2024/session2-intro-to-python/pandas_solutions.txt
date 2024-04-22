@@ -1,0 +1,2 @@
+1. csv_df[csv_df['subject']=='s1']
+2. csv_df['region'] = csv_df['region'].map({'parietal': 0, 'frontal': 1})
