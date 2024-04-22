@@ -3,4 +3,5 @@ __pycache__/
 !.gitignore
 !README.md
 !ai-cog-neuro
+!ai-cog-neuro/*
 /ai-cog-neuro/2024/.ipynb_checkpoints
