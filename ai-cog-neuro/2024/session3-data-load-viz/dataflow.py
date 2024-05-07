@@ -13,16 +13,13 @@ eeg_raw.load_data()
 eeg_raw.info
 
 ## raw time-domain plot
-eeg_raw.plot(start=0,duration=30)
-#eeg_raw.plot(start=0,duration=len(eeg_raw)/eeg_raw.info['sfreq'])
-#eeg_raw.plot(start=0,duration=30, highpass=.1)
+eeg_raw.plot()
 
 ## raw frequency-domain plot
-eeg_raw.compute_psd(fmax=500).plot()
+eeg_raw.compute_psd().plot()
 
 ## summary of the data
 eeg_raw.describe()
-
 
 ## preprocessing
 # high-pass filter
@@ -42,4 +39,5 @@ eeg_epochs = mne.Epochs(
     baseline=baseline,
     verbose=False)
 
+##
 eeg_epochs.plot(n_epochs=10, picks=['eeg'])
