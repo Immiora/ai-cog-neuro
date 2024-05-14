@@ -1,6 +1,3 @@
-import os.path as op
-import numpy as np
-import matplotlib.pyplot as plt
 import mne
 import mne_bids
 
@@ -13,13 +10,14 @@ eeg_raw.load_data()
 eeg_raw.info
 
 ## raw time-domain plot
-eeg_raw.plot()
+eeg_raw.plot(start=0, duration=eeg_raw._data.shape[-1]/eeg_raw.info['sfreq'])
 
 ## raw frequency-domain plot
 eeg_raw.compute_psd().plot()
 
 ## summary of the data
 eeg_raw.describe()
+eeg_raw.annotations.description
 
 ## preprocessing
 # high-pass filter
@@ -41,3 +39,14 @@ eeg_epochs = mne.Epochs(
 
 ##
 eeg_epochs.plot(n_epochs=10, picks=['eeg'])
+
+
+##
+import numpy as np
+
+np.random.seed(42)
+print(np.random.rand(1))
+
+##
+import numpy as np
+print(np.random.rand(1))
