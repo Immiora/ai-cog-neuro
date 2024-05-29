@@ -16,10 +16,10 @@ session = 'iemu'
 
 ## Load channels
 import pandas as pd
-channels_path = mne_bids.BIDSPath(subject=subject,
+channels_path = mne_bids.BIDSPath(subject='07',
                                     session=session,
                                     suffix='channels',
-                                    extension='tsv',
+                                    extension='.tsv',
                                     datatype=datatype,
                                     task=task,
                                     acquisition=acquisition,
@@ -27,10 +27,10 @@ channels_path = mne_bids.BIDSPath(subject=subject,
 channels = pd.read_csv(str(channels_path.match()[0]), sep='\t', header=0, index_col=None)
 
 ## Select channels
-data_path = mne_bids.BIDSPath(subject=subject,
+data_path = mne_bids.BIDSPath(subject='07',
                                     session=session,
                                     suffix='ieeg',
-                                    extension='vhdr',
+                                    extension='.vhdr',
                                     datatype=datatype,
                                     task=task,
                                     acquisition=acquisition,
