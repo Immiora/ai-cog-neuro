@@ -111,19 +111,19 @@ np.save(fname, gamma_resampled)
 
 ## Plot the data you have with
 # from matplotlib import pyplot as plt
-# plt.plot(signal)
+# plt.plot(gamma_resampled[:, :5])
 
 ## Try smoothing data to make it less noisy
-def smooth_signal_1d(y, n):
-    '''
-    Smooth 1d signal
-
-    :param y: ndarray: signal
-    :param n: size of smoothing
-    :return: smoothed signal
-    '''
-    from scipy.ndimage import uniform_filter1d
-    return uniform_filter1d(y, axis=0, size=n)
+# def smooth_signal_1d(y, n):
+#     '''
+#     Smooth 1d signal
+#
+#     :param y: ndarray: signal
+#     :param n: size of smoothing
+#     :return: smoothed signal
+#     '''
+#     from scipy.ndimage import uniform_filter1d
+#     return uniform_filter1d(y, axis=0, size=n)
 
 ## Try PCA to reduce the dimensionality
 
