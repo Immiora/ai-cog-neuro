@@ -27,7 +27,7 @@ class LinearRegression(torch.nn.Module):
         return out
 
 ## specify the model, objective and learning rule
-epochs = 5
+epochs = 200
 model = LinearRegression(inputSize= x_train.shape[-1], outputSize=y_train.shape[-1] )
 criterion = torch.nn.MSELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.03)
@@ -63,7 +63,7 @@ with torch.no_grad(): # we don't need gradients in the testing phase
 ## calculate the performance score for the ANN model
 from sklearn.metrics import r2_score
 print(f'Train nn: {r2_score(y_train, predicted_train)}')
-print(f'Train nn: {r2_score(y_test, predicted_test)}')
+print(f'Test nn: {r2_score(y_test, predicted_test)}')
 
 ## plot predictions
 from matplotlib import pyplot as plt
